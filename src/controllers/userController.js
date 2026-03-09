@@ -1,6 +1,5 @@
 const User = require("../models/User");
 
-// POST /api/users
 const createUser = async (req, res) => {
   try {
     const user = await User.create(req.body);
@@ -10,7 +9,6 @@ const createUser = async (req, res) => {
   }
 };
 
-// GET /api/users
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -20,7 +18,6 @@ const getAllUsers = async (req, res) => {
   }
 };
 
-// GET /api/users/:id
 const getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -31,7 +28,6 @@ const getUserById = async (req, res) => {
   }
 };
 
-// PUT /api/users/:id
 const updateUser = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
@@ -45,7 +41,6 @@ const updateUser = async (req, res) => {
   }
 };
 
-// DELETE /api/users/:id
 const deleteUser = async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
